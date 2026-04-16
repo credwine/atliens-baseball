@@ -148,9 +148,24 @@
     ioStat.observe(el);
   });
 
-  /* ---------- baseball card flip + tilt ---------- */
+  /* ---------- baseball card: holo layers, flip, tilt ---------- */
   $$('.bball-card').forEach(card => {
-    // flip on click / Enter
+    // Inject foil + shine layers onto the card front (skip the recruit/ghost card)
+    const front = $('.bball-front', card);
+    if (front && !card.classList.contains('ghost')) {
+      if (!$('.foil', front)) {
+        const foil = document.createElement('div');
+        foil.className = 'foil';
+        front.prepend(foil);
+      }
+      if (!$('.shine', front)) {
+        const shine = document.createElement('div');
+        shine.className = 'shine';
+        front.appendChild(shine);
+      }
+    }
+
+    // Flip on click / Enter
     card.addEventListener('click', e => {
       if (e.target.closest('a')) return;
       card.classList.toggle('flipped');
@@ -158,9 +173,10 @@
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('flipped'); }
     });
-    // tilt
+
+    // Tilt + holo tracking (desktop only — lite devices keep the static holo)
+    if (lite) return;
     const inner = $('.bball-inner', card);
-    const holo = $('.holo', card);
     let raf;
     card.addEventListener('mousemove', e => {
       if (card.classList.contains('flipped')) return;
@@ -169,14 +185,26 @@
       const y = (e.clientY - r.top) / r.height;
       const rx = (0.5 - y) * 16;
       const ry = (x - 0.5) * 16;
+      const hue = (x * 220 + y * 80) | 0;
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         inner.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
-        if (holo) holo.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+        if (front) {
+          front.style.setProperty('--mx', x.toFixed(3));
+          front.style.setProperty('--my', y.toFixed(3));
+          front.style.setProperty('--hue', hue + 'deg');
+        }
       });
     });
     card.addEventListener('mouseleave', () => {
-      if (!card.classList.contains('flipped')) inner.style.transform = '';
+      if (!card.classList.contains('flipped')) {
+        inner.style.transform = '';
+        if (front) {
+          front.style.setProperty('--mx', '.5');
+          front.style.setProperty('--my', '.5');
+          front.style.setProperty('--hue', '0deg');
+        }
+      }
     });
   });
 

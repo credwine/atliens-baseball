@@ -8,7 +8,7 @@
  *   - Never cache: og.html preview, API-like endpoints
  * Versioning: bump CACHE_VERSION to invalidate old caches.
  */
-const CACHE_VERSION = 'v1.4.0';
+const CACHE_VERSION = 'v1.5.0';
 const SHELL_CACHE   = `atliens-shell-${CACHE_VERSION}`;
 const STATIC_CACHE  = `atliens-static-${CACHE_VERSION}`;
 const IMAGE_CACHE   = `atliens-img-${CACHE_VERSION}`;
