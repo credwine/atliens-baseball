@@ -137,8 +137,14 @@ button { font: inherit; border: 0; background: none; color: inherit; cursor: poi
   border-bottom: 1px solid var(--line);
 }
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand-mark { width: 36px; height: 36px; display: inline-block; }
-.brand-mark svg { width: 100%; height: 100%; }
+.brand-mark {
+  width: 36px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  filter: drop-shadow(0 0 10px rgba(57,255,20,.4));
+  transition: transform .3s var(--ease), filter .3s;
+}
+.brand-mark svg, .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.brand:hover .brand-mark { transform: rotate(-6deg) scale(1.08); filter: drop-shadow(0 0 16px rgba(57,255,20,.7)); }
 .brand-word {
   font-family: var(--font-alt);
   font-size: 22px;
@@ -178,7 +184,8 @@ button { font: inherit; border: 0; background: none; color: inherit; cursor: poi
     flex-direction: column;
     padding: 28px 20px 32px;
     background: rgba(11,11,15,.97);
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
     transform: translateY(-12px); opacity: 0; pointer-events: none;
     transition: transform .3s var(--ease), opacity .2s;
