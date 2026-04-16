@@ -1,6 +1,6 @@
 # ATLiens Baseball
 
-Static site for the ATLiens, Atlanta MABL adult hardball team.
+Static site for the ATLiens, AMBA (Atlanta Men's Baseball Association) adult hardball team.
 2022 Fall League Champions.
 
 Built with vanilla HTML, CSS, and JavaScript. No build step.

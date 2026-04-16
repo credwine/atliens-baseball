@@ -1,7 +1,7 @@
 {
   "name": "ATLiens Baseball",
   "short_name": "ATLiens",
-  "description": "ATLiens Baseball - 2022 MABL Fall League Champions. Atlanta adult hardball team.",
+  "description": "ATLiens Baseball - 2022 AMBA Fall League Champions. Atlanta Men's Baseball Association adult hardball team.",
   "start_url": "/atliens-baseball/",
   "scope": "/atliens-baseball/",
   "display": "standalone",
@@ -25,7 +25,7 @@
       "sizes": "1200x630",
       "type": "image/jpeg",
       "form_factor": "wide",
-      "label": "ATLiens Baseball 2022 Fall League Champions"
+      "label": "ATLiens Baseball 2022 AMBA Fall League Champions"
     }
   ]
 }

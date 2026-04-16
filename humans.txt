@@ -1,5 +1,5 @@
 /* TEAM */
-The ATLiens - Atlanta MABL / MSBL
+The ATLiens - AMBA / Atlanta Men's Baseball Association
 Status: 2022 Fall League Champions
 Location: Atlanta, Georgia, USA
 Playing surface: Turf & grass, metro ATL fields
@@ -14,6 +14,6 @@ Components: Hand-tilted holo baseball cards, scroll-reveal, glitch title
 Last updated: 2026-04-16
 
 /* THANKS */
-Atlanta MABL / MSBL, running since 1988
+AMBA - Atlanta Men's Baseball Association, running since 1992
 The green alien plush mascot
 Everybody who showed up Sunday mornings
