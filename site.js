@@ -180,4 +180,34 @@
       heroStack.style.transform = `translateY(${y * 0.25}px) scale(${1 + y * 0.0004})`;
     }, { passive: true });
   }
+
+  /* ---------- service worker registration ---------- */
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js', { scope: './' })
+        .then(reg => {
+          // Listen for updates
+          reg.addEventListener('updatefound', () => {
+            const newWorker = reg.installing;
+            if (!newWorker) return;
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                // New SW available. Auto-activate - it's a static site, safe.
+                newWorker.postMessage('skipWaiting');
+              }
+            });
+          });
+        })
+        .catch(() => { /* silent */ });
+
+      // Reload once when a new SW takes control (so users get fresh assets without ghost state)
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (reloaded) return;
+        reloaded = true;
+        // Gentle: don't force reload if user is mid-interaction
+        if (document.visibilityState === 'hidden') location.reload();
+      });
+    });
+  }
 })();

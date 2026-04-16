@@ -1,0 +1,31 @@
+{
+  "name": "ATLiens Baseball",
+  "short_name": "ATLiens",
+  "description": "ATLiens Baseball - 2022 MABL Fall League Champions. Atlanta adult hardball team.",
+  "start_url": "/atliens-baseball/",
+  "scope": "/atliens-baseball/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b0b0f",
+  "theme_color": "#0b0b0f",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["sports", "entertainment"],
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/og.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "ATLiens Baseball 2022 Fall League Champions"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+/* TEAM */
+The ATLiens - Atlanta MABL / MSBL
+Status: 2022 Fall League Champions
+Location: Atlanta, Georgia, USA
+Playing surface: Turf & grass, metro ATL fields
+Vibe: Out of this world. Out of the park.
+
+/* SITE */
+Built by: Forge Dev.studio
+Site: https://forgedev.studio
+Stack: Vanilla HTML / CSS / JS, GitHub Pages
+Fonts: Anton, Barlow Condensed, Space Grotesk, Audiowide
+Components: Hand-tilted holo baseball cards, scroll-reveal, glitch title
+Last updated: 2026-04-16
+
+/* THANKS */
+Atlanta MABL / MSBL, running since 1988
+The green alien plush mascot
+Everybody who showed up Sunday mornings

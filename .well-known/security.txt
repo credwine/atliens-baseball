@@ -1,0 +1,4 @@
+Contact: https://credwine.github.io/atliens-baseball/#join
+Expires: 2027-04-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://credwine.github.io/atliens-baseball/.well-known/security.txt

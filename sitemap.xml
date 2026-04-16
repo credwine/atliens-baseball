@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://credwine.github.io/atliens-baseball/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://credwine.github.io/atliens-baseball/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://credwine.github.io/atliens-baseball/" />
+    <image:image>
+      <image:loc>https://credwine.github.io/atliens-baseball/assets/og.jpg</image:loc>
+      <image:title>ATLiens Baseball 2022 MABL Fall League Champions</image:title>
+      <image:caption>The ATLiens adult baseball team - 2022 MABL Fall League Champions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://credwine.github.io/atliens-baseball/assets/img/champions-2022.jpg</image:loc>
+      <image:title>2022 MABL Fall League Champions</image:title>
+      <image:caption>Full ATLiens squad with the 2022 MABL Fall League trophy</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://credwine.github.io/atliens-baseball/assets/img/hype-scream.jpg</image:loc>
+      <image:title>ATLiens player celebrating</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://credwine.github.io/atliens-baseball/assets/img/hit-contact.jpg</image:loc>
+      <image:title>ATLiens night game at-bat contact</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://credwine.github.io/atliens-baseball/assets/img/double-play.jpg</image:loc>
+      <image:title>ATLiens turning a double play</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://credwine.github.io/atliens-baseball/assets/img/purple-celebrate.jpg</image:loc>
+      <image:title>ATLiens purple jersey celebration</image:title>
+    </image:image>
+  </url>
+</urlset>
