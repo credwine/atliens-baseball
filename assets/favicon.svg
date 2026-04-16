@@ -1,28 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <radialGradient id="skin" cx="50%" cy="40%" r="70%">
-      <stop offset="0%" stop-color="#8ed4c7"/>
-      <stop offset="45%" stop-color="#5bbfa0"/>
-      <stop offset="100%" stop-color="#3a8f66"/>
+    <radialGradient id="skin" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#a7ff4a"/>
+      <stop offset="50%" stop-color="#39FF14"/>
+      <stop offset="100%" stop-color="#1f8a0a"/>
     </radialGradient>
   </defs>
   <rect width="64" height="64" fill="#0b0b0f" rx="10"/>
-  <g transform="translate(7, 8) scale(0.25)">
-    <path d="M100 14
-             C 150 14, 184 54, 184 100
-             C 184 140, 168 170, 140 190
-             C 125 201, 112 208, 100 208
-             C 88 208, 75 201, 60 190
-             C 32 170, 16 140, 16 100
-             C 16 54, 50 14, 100 14 Z"
+  <g transform="translate(6, 7) scale(0.26)">
+    <path d="M100 10
+             C 160 10, 190 58, 190 108
+             C 190 148, 172 180, 142 200
+             C 128 210, 114 216, 100 216
+             C 86 216, 72 210, 58 200
+             C 28 180, 10 148, 10 108
+             C 10 58, 40 10, 100 10 Z"
           fill="url(#skin)"
-          stroke="#0f1f18"
-          stroke-width="8"
+          stroke="#062908"
+          stroke-width="6"
           stroke-linejoin="round"/>
-    <ellipse cx="64" cy="108" rx="20" ry="30" fill="#000" stroke="#0f1f18" stroke-width="4" transform="rotate(-18 64 108)"/>
-    <ellipse cx="136" cy="108" rx="20" ry="30" fill="#000" stroke="#0f1f18" stroke-width="4" transform="rotate(18 136 108)"/>
-    <ellipse cx="58" cy="94" rx="5" ry="7" fill="#ffffff" transform="rotate(-18 58 94)"/>
-    <ellipse cx="130" cy="94" rx="5" ry="7" fill="#ffffff" transform="rotate(18 130 94)"/>
-    <path d="M82 168 Q100 180 118 168" fill="none" stroke="#0f1f18" stroke-width="7" stroke-linecap="round"/>
+    <ellipse cx="60" cy="118" rx="26" ry="40" fill="#000" transform="rotate(-22 60 118)"/>
+    <ellipse cx="140" cy="118" rx="26" ry="40" fill="#000" transform="rotate(22 140 118)"/>
   </g>
 </svg>

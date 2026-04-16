@@ -5,6 +5,23 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
+  /* ---------- capability flags ---------- */
+  const isSmall = window.matchMedia('(max-width: 900px)').matches;
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const lowEnd = navigator.deviceMemory && navigator.deviceMemory <= 4;
+  const lite = isSmall || isTouch || reduced || lowEnd;
+
+  /* rAF-throttled scroll */
+  function rafScroll(fn) {
+    let ticking = false;
+    return () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { fn(); ticking = false; });
+    };
+  }
+
   /* ---------- year stamp ---------- */
   const y = $('#y');
   if (y) y.textContent = new Date().getFullYear();
@@ -28,20 +45,30 @@
     }));
   }
 
-  /* ---------- hero image crossfade ---------- */
+  /* ---------- hero image crossfade (desktop-only, pauses when tab hidden) ---------- */
   const heroImgs = $$('.hero-img');
   let heroIdx = 0;
-  if (heroImgs.length > 1) {
-    setInterval(() => {
-      heroImgs[heroIdx].classList.remove('active');
-      heroIdx = (heroIdx + 1) % heroImgs.length;
-      heroImgs[heroIdx].classList.add('active');
-    }, 4200);
+  let heroTimer = null;
+  if (heroImgs.length > 1 && !lite) {
+    const startCycle = () => {
+      stopCycle();
+      heroTimer = setInterval(() => {
+        if (document.hidden) return;
+        heroImgs[heroIdx].classList.remove('active');
+        heroIdx = (heroIdx + 1) % heroImgs.length;
+        heroImgs[heroIdx].classList.add('active');
+      }, 4200);
+    };
+    const stopCycle = () => { if (heroTimer) { clearInterval(heroTimer); heroTimer = null; } };
+    startCycle();
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopCycle(); else startCycle();
+    });
   }
 
   /* ---------- custom cursor (desktop) ---------- */
   const cursor = $('.fx-cursor');
-  if (cursor && window.matchMedia('(hover: hover)').matches) {
+  if (cursor && !lite && window.matchMedia('(hover: hover)').matches) {
     let cx = 0, cy = 0, tx = 0, ty = 0;
     window.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
     const tick = () => {
@@ -153,32 +180,35 @@
     });
   });
 
-  /* ---------- gallery: subtle parallax ---------- */
+  /* ---------- gallery: subtle parallax (desktop only, rAF-throttled) ---------- */
   const gals = $$('.gal img');
-  if (gals.length) {
+  if (gals.length && !lite) {
+    const visible = new Set();
     const ioGal = new IntersectionObserver(entries => {
-      entries.forEach(e => e.target.dataset.vis = e.isIntersecting ? '1' : '0');
+      entries.forEach(e => {
+        if (e.isIntersecting) visible.add(e.target);
+        else visible.delete(e.target);
+      });
     }, { threshold: 0 });
     gals.forEach(g => ioGal.observe(g));
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', rafScroll(() => {
       const vh = window.innerHeight;
-      gals.forEach(g => {
-        if (g.dataset.vis !== '1') return;
+      visible.forEach(g => {
         const r = g.getBoundingClientRect();
         const mid = r.top + r.height / 2;
         const p = (mid - vh / 2) / vh;
-        g.style.transform = `translateY(${p * -18}px) scale(1.05)`;
+        g.style.transform = `translate3d(0, ${p * -18}px, 0) scale(1.05)`;
       });
-    }, { passive: true });
+    }), { passive: true });
   }
 
-  /* ---------- hero parallax scroll ---------- */
+  /* ---------- hero parallax (desktop only, rAF-throttled) ---------- */
   const heroStack = $('.hero-stack');
-  if (heroStack) {
-    window.addEventListener('scroll', () => {
+  if (heroStack && !lite) {
+    window.addEventListener('scroll', rafScroll(() => {
       const y = Math.min(window.scrollY, window.innerHeight);
-      heroStack.style.transform = `translateY(${y * 0.25}px) scale(${1 + y * 0.0004})`;
-    }, { passive: true });
+      heroStack.style.transform = `translate3d(0, ${y * 0.25}px, 0) scale(${1 + y * 0.0004})`;
+    }), { passive: true });
   }
 
   /* ---------- service worker registration ---------- */

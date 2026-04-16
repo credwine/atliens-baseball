@@ -8,7 +8,7 @@
  *   - Never cache: og.html preview, API-like endpoints
  * Versioning: bump CACHE_VERSION to invalidate old caches.
  */
-const CACHE_VERSION = 'v1.2.0';
+const CACHE_VERSION = 'v1.3.0';
 const SHELL_CACHE   = `atliens-shell-${CACHE_VERSION}`;
 const STATIC_CACHE  = `atliens-static-${CACHE_VERSION}`;
 const IMAGE_CACHE   = `atliens-img-${CACHE_VERSION}`;
@@ -23,8 +23,8 @@ const SHELL_ASSETS = [
   SCOPE_PATH + 'site.js',
   SCOPE_PATH + 'assets/favicon.svg',
   SCOPE_PATH + 'assets/alien-logo.svg',
+  SCOPE_PATH + 'assets/img/hype-scream-m.webp',
   SCOPE_PATH + 'assets/img/hype-scream.webp',
-  SCOPE_PATH + 'assets/img/hype-scream.jpg',
   SCOPE_PATH + 'manifest.webmanifest',
 ];
 

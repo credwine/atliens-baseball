@@ -66,7 +66,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <!-- Preload LCP hero image (first in crossfade stack) -->
-<link rel="preload" as="image" href="assets/img/hype-scream.webp" type="image/webp" fetchpriority="high" imagesrcset="assets/img/hype-scream.webp" />
+<link rel="preload" as="image" href="assets/img/hype-scream-m.webp" type="image/webp" fetchpriority="high" imagesrcset="assets/img/hype-scream-m.webp 900w, assets/img/hype-scream.webp 1800w" imagesizes="100vw" />
 
 <!-- Preload critical fonts (display=block for Anton title) -->
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;700&family=Audiowide&display=swap" rel="stylesheet" />
@@ -262,24 +262,24 @@
 <section id="top" class="hero">
   <div class="hero-stack" aria-hidden="true">
     <picture>
-      <source srcset="assets/img/hype-scream.webp" type="image/webp"/>
-      <img src="assets/img/hype-scream.jpg" alt="" class="hero-img active" loading="eager" fetchpriority="high" width="1800" height="1200"/>
+      <source type="image/webp" srcset="assets/img/hype-scream-m.webp 900w, assets/img/hype-scream.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/>
+      <img srcset="assets/img/hype-scream-m.jpg 900w, assets/img/hype-scream.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/hype-scream.jpg" alt="" class="hero-img active" loading="eager" fetchpriority="high" width="1800" height="1200"/>
     </picture>
     <picture>
-      <source srcset="assets/img/hit-contact.webp" type="image/webp"/>
-      <img src="assets/img/hit-contact.jpg" alt="" class="hero-img" loading="lazy" width="1800" height="1200"/>
+      <source type="image/webp" srcset="assets/img/hit-contact-m.webp 900w, assets/img/hit-contact.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/>
+      <img srcset="assets/img/hit-contact-m.jpg 900w, assets/img/hit-contact.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/hit-contact.jpg" alt="" class="hero-img" loading="lazy" width="1800" height="1200"/>
     </picture>
     <picture>
-      <source srcset="assets/img/fist-pump.webp" type="image/webp"/>
-      <img src="assets/img/fist-pump.jpg" alt="" class="hero-img" loading="lazy" width="1800" height="1200"/>
+      <source type="image/webp" srcset="assets/img/fist-pump-m.webp 900w, assets/img/fist-pump.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/>
+      <img srcset="assets/img/fist-pump-m.jpg 900w, assets/img/fist-pump.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/fist-pump.jpg" alt="" class="hero-img" loading="lazy" width="1800" height="1200"/>
     </picture>
     <picture>
-      <source srcset="assets/img/outfield-scream.webp" type="image/webp"/>
-      <img src="assets/img/outfield-scream.jpg" alt="" class="hero-img" loading="lazy" width="1800" height="1200"/>
+      <source type="image/webp" srcset="assets/img/outfield-scream-m.webp 900w, assets/img/outfield-scream.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/>
+      <img srcset="assets/img/outfield-scream-m.jpg 900w, assets/img/outfield-scream.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/outfield-scream.jpg" alt="" class="hero-img" loading="lazy" width="1800" height="1200"/>
     </picture>
     <picture>
-      <source srcset="assets/img/pitcher-delivery.webp" type="image/webp"/>
-      <img src="assets/img/pitcher-delivery.jpg" alt="" class="hero-img" loading="lazy" width="1800" height="1200"/>
+      <source type="image/webp" srcset="assets/img/pitcher-delivery-m.webp 900w, assets/img/pitcher-delivery.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/>
+      <img srcset="assets/img/pitcher-delivery-m.jpg 900w, assets/img/pitcher-delivery.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/pitcher-delivery.jpg" alt="" class="hero-img" loading="lazy" width="1800" height="1200"/>
     </picture>
   </div>
   <div class="hero-vignette"></div>
@@ -370,7 +370,7 @@
 
   <div class="jersey-rail">
     <article class="jersey-card" data-jersey="home">
-      <div class="jersey-img" style="background-image:image-set(url('assets/img/black-scream.webp') type('image/webp'), url('assets/img/black-scream.jpg') type('image/jpeg'))"></div>
+      <div class="jersey-img" style="background-image:image-set(url('assets/img/black-scream-m.webp') type('image/webp'), url('assets/img/black-scream-m.jpg') type('image/jpeg'))"></div>
       <div class="jersey-meta">
         <span class="jersey-num">01</span>
         <h3>BLACKOUT HOME</h3>
@@ -379,7 +379,7 @@
     </article>
 
     <article class="jersey-card" data-jersey="alt">
-      <div class="jersey-img" style="background-image:image-set(url('assets/img/purple-celebrate.webp') type('image/webp'), url('assets/img/purple-celebrate.jpg') type('image/jpeg'))"></div>
+      <div class="jersey-img" style="background-image:image-set(url('assets/img/purple-celebrate-m.webp') type('image/webp'), url('assets/img/purple-celebrate-m.jpg') type('image/jpeg'))"></div>
       <div class="jersey-meta">
         <span class="jersey-num">02</span>
         <h3>PURPLE HAZE</h3>
@@ -388,7 +388,7 @@
     </article>
 
     <article class="jersey-card" data-jersey="away">
-      <div class="jersey-img" style="background-image:image-set(url('assets/img/powder-helmet.webp') type('image/webp'), url('assets/img/powder-helmet.jpg') type('image/jpeg'))"></div>
+      <div class="jersey-img" style="background-image:image-set(url('assets/img/powder-helmet-m.webp') type('image/webp'), url('assets/img/powder-helmet-m.jpg') type('image/jpeg'))"></div>
       <div class="jersey-meta">
         <span class="jersey-num">03</span>
         <h3>POWDER THROWBACK</h3>
@@ -409,8 +409,8 @@
     </h2>
     <div class="trophy-photo">
       <picture>
-        <source srcset="assets/img/champions-2022.webp" type="image/webp"/>
-        <img src="assets/img/champions-2022.jpg" alt="The full ATLiens squad on the field holding the 2022 MABL Fall League Championship trophy, with their green alien plush mascot" loading="lazy" width="1200" height="900"/>
+        <source type="image/webp" srcset="assets/img/champions-2022-m.webp 900w, assets/img/champions-2022.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/>
+        <img srcset="assets/img/champions-2022-m.jpg 900w, assets/img/champions-2022.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/champions-2022.jpg" alt="The full ATLiens squad on the field holding the 2022 MABL Fall League Championship trophy, with their green alien plush mascot" loading="lazy" width="1200" height="900"/>
       </picture>
       <div class="trophy-rays"></div>
     </div>
@@ -433,7 +433,7 @@
     <!-- card template repeated -->
     <article class="bball-card" tabindex="0">
       <div class="bball-inner">
-        <div class="bball-front" style="--img:image-set(url('assets/img/hype-scream.webp') type('image/webp'), url('assets/img/hype-scream.jpg') type('image/jpeg'))">
+        <div class="bball-front" style="--img:image-set(url('assets/img/hype-scream-m.webp') type('image/webp'), url('assets/img/hype-scream-m.jpg') type('image/jpeg'))">
           <div class="holo"></div>
           <div class="card-head">
             <span class="card-team">ATLIENS</span>
@@ -460,7 +460,7 @@
 
     <article class="bball-card" tabindex="0">
       <div class="bball-inner">
-        <div class="bball-front" style="--img:image-set(url('assets/img/pitcher-delivery.webp') type('image/webp'), url('assets/img/pitcher-delivery.jpg') type('image/jpeg'))">
+        <div class="bball-front" style="--img:image-set(url('assets/img/pitcher-delivery-m.webp') type('image/webp'), url('assets/img/pitcher-delivery-m.jpg') type('image/jpeg'))">
           <div class="holo"></div>
           <div class="card-head"><span class="card-team">ATLIENS</span><span class="card-rookie">ACE</span></div>
           <div class="card-num">#21</div>
@@ -484,7 +484,7 @@
 
     <article class="bball-card" tabindex="0">
       <div class="bball-inner">
-        <div class="bball-front" style="--img:image-set(url('assets/img/fist-pump.webp') type('image/webp'), url('assets/img/fist-pump.jpg') type('image/jpeg'))">
+        <div class="bball-front" style="--img:image-set(url('assets/img/fist-pump-m.webp') type('image/webp'), url('assets/img/fist-pump-m.jpg') type('image/jpeg'))">
           <div class="holo"></div>
           <div class="card-head"><span class="card-team">ATLIENS</span><span class="card-rookie">VET</span></div>
           <div class="card-num">#42</div>
@@ -508,7 +508,7 @@
 
     <article class="bball-card" tabindex="0">
       <div class="bball-inner">
-        <div class="bball-front" style="--img:image-set(url('assets/img/purple-double.webp') type('image/webp'), url('assets/img/purple-double.jpg') type('image/jpeg'))">
+        <div class="bball-front" style="--img:image-set(url('assets/img/purple-double-m.webp') type('image/webp'), url('assets/img/purple-double-m.jpg') type('image/jpeg'))">
           <div class="holo"></div>
           <div class="card-head"><span class="card-team">ATLIENS</span><span class="card-rookie">SS</span></div>
           <div class="card-num">#9</div>
@@ -532,7 +532,7 @@
 
     <article class="bball-card" tabindex="0">
       <div class="bball-inner">
-        <div class="bball-front" style="--img:image-set(url('assets/img/outfield-catch.webp') type('image/webp'), url('assets/img/outfield-catch.jpg') type('image/jpeg'))">
+        <div class="bball-front" style="--img:image-set(url('assets/img/outfield-catch-m.webp') type('image/webp'), url('assets/img/outfield-catch-m.jpg') type('image/jpeg'))">
           <div class="holo"></div>
           <div class="card-head"><span class="card-team">ATLIENS</span><span class="card-rookie">CF</span></div>
           <div class="card-num">#23</div>
@@ -556,7 +556,7 @@
 
     <article class="bball-card" tabindex="0">
       <div class="bball-inner">
-        <div class="bball-front" style="--img:image-set(url('assets/img/pitcher-purple-night.webp') type('image/webp'), url('assets/img/pitcher-purple-night.jpg') type('image/jpeg'))">
+        <div class="bball-front" style="--img:image-set(url('assets/img/pitcher-purple-night-m.webp') type('image/webp'), url('assets/img/pitcher-purple-night-m.jpg') type('image/jpeg'))">
           <div class="holo"></div>
           <div class="card-head"><span class="card-team">ATLIENS</span><span class="card-rookie">LHP</span></div>
           <div class="card-num">#17</div>
@@ -580,7 +580,7 @@
 
     <article class="bball-card" tabindex="0">
       <div class="bball-inner">
-        <div class="bball-front" style="--img:image-set(url('assets/img/purple-fielding.webp') type('image/webp'), url('assets/img/purple-fielding.jpg') type('image/jpeg'))">
+        <div class="bball-front" style="--img:image-set(url('assets/img/purple-fielding-m.webp') type('image/webp'), url('assets/img/purple-fielding-m.jpg') type('image/jpeg'))">
           <div class="holo"></div>
           <div class="card-head"><span class="card-team">ATLIENS</span><span class="card-rookie">3B</span></div>
           <div class="card-num">#10</div>
@@ -604,7 +604,7 @@
 
     <article class="bball-card" tabindex="0">
       <div class="bball-inner">
-        <div class="bball-front" style="--img:image-set(url('assets/img/purple-slide.webp') type('image/webp'), url('assets/img/purple-slide.jpg') type('image/jpeg'))">
+        <div class="bball-front" style="--img:image-set(url('assets/img/purple-slide-m.webp') type('image/webp'), url('assets/img/purple-slide-m.jpg') type('image/jpeg'))">
           <div class="holo"></div>
           <div class="card-head"><span class="card-team">ATLIENS</span><span class="card-rookie">UTL</span></div>
           <div class="card-num">#25</div>
@@ -660,18 +660,18 @@
   </div>
 
   <div class="gal-grid">
-    <figure class="gal tall"><picture><source srcset="assets/img/pitcher-followthrough.webp" type="image/webp"/><img src="assets/img/pitcher-followthrough.jpg" alt="ATLiens pitcher finishing his delivery under the lights" loading="lazy" width="800" height="1000"/></picture></figure>
-    <figure class="gal"><picture><source srcset="assets/img/hit-contact.webp" type="image/webp"/><img src="assets/img/hit-contact.jpg" alt="ATLiens batter making contact at the plate in a night game" loading="lazy" width="800" height="600"/></picture></figure>
-    <figure class="gal"><picture><source srcset="assets/img/outfield-scream.webp" type="image/webp"/><img src="assets/img/outfield-scream.jpg" alt="ATLiens outfielder celebrating a defensive play" loading="lazy" width="800" height="600"/></picture></figure>
-    <figure class="gal wide"><picture><source srcset="assets/img/double-play.webp" type="image/webp"/><img src="assets/img/double-play.jpg" alt="ATLiens infielder turning a double play at second base" loading="lazy" width="1600" height="800"/></picture></figure>
-    <figure class="gal"><picture><source srcset="assets/img/pitcher-night.webp" type="image/webp"/><img src="assets/img/pitcher-night.jpg" alt="ATLiens pitcher delivering a fastball at night" loading="lazy" width="800" height="600"/></picture></figure>
-    <figure class="gal tall"><picture><source srcset="assets/img/black-scream.webp" type="image/webp"/><img src="assets/img/black-scream.jpg" alt="ATLiens player in black kit celebrating after a play" loading="lazy" width="800" height="1000"/></picture></figure>
-    <figure class="gal"><picture><source srcset="assets/img/huddle-27.webp" type="image/webp"/><img src="assets/img/huddle-27.jpg" alt="ATLiens number 27 in dugout huddle with teammates" loading="lazy" width="800" height="600"/></picture></figure>
-    <figure class="gal"><picture><source srcset="assets/img/florida-team.webp" type="image/webp"/><img src="assets/img/florida-team.jpg" alt="Full ATLiens roster in powder blue kits at the MSBL Fall Classic in Florida" loading="lazy" width="800" height="600"/></picture></figure>
-    <figure class="gal wide"><picture><source srcset="assets/img/purple-celebrate.webp" type="image/webp"/><img src="assets/img/purple-celebrate.jpg" alt="ATLiens player in purple jersey screaming in celebration after scoring" loading="lazy" width="1600" height="800"/></picture></figure>
-    <figure class="gal"><picture><source srcset="assets/img/pitcher-day.webp" type="image/webp"/><img src="assets/img/pitcher-day.jpg" alt="ATLiens pitcher in day game warming up on the mound" loading="lazy" width="800" height="600"/></picture></figure>
-    <figure class="gal"><picture><source srcset="assets/img/hype-fist-green.webp" type="image/webp"/><img src="assets/img/hype-fist-green.jpg" alt="ATLiens player fist-pumping in the neon-green home kit" loading="lazy" width="800" height="600"/></picture></figure>
-    <figure class="gal"><picture><source srcset="assets/img/two-up-blue.webp" type="image/webp"/><img src="assets/img/two-up-blue.jpg" alt="Two ATLiens players taking a selfie in powder blue kits" loading="lazy" width="800" height="600"/></picture></figure>
+    <figure class="gal tall"><picture><source type="image/webp" srcset="assets/img/pitcher-followthrough-m.webp 900w, assets/img/pitcher-followthrough.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/pitcher-followthrough-m.jpg 900w, assets/img/pitcher-followthrough.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/pitcher-followthrough.jpg" alt="ATLiens pitcher finishing his delivery under the lights" loading="lazy" width="800" height="1000"/></picture></figure>
+    <figure class="gal"><picture><source type="image/webp" srcset="assets/img/hit-contact-m.webp 900w, assets/img/hit-contact.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/hit-contact-m.jpg 900w, assets/img/hit-contact.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/hit-contact.jpg" alt="ATLiens batter making contact at the plate in a night game" loading="lazy" width="800" height="600"/></picture></figure>
+    <figure class="gal"><picture><source type="image/webp" srcset="assets/img/outfield-scream-m.webp 900w, assets/img/outfield-scream.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/outfield-scream-m.jpg 900w, assets/img/outfield-scream.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/outfield-scream.jpg" alt="ATLiens outfielder celebrating a defensive play" loading="lazy" width="800" height="600"/></picture></figure>
+    <figure class="gal wide"><picture><source type="image/webp" srcset="assets/img/double-play-m.webp 900w, assets/img/double-play.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/double-play-m.jpg 900w, assets/img/double-play.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/double-play.jpg" alt="ATLiens infielder turning a double play at second base" loading="lazy" width="1600" height="800"/></picture></figure>
+    <figure class="gal"><picture><source type="image/webp" srcset="assets/img/pitcher-night-m.webp 900w, assets/img/pitcher-night.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/pitcher-night-m.jpg 900w, assets/img/pitcher-night.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/pitcher-night.jpg" alt="ATLiens pitcher delivering a fastball at night" loading="lazy" width="800" height="600"/></picture></figure>
+    <figure class="gal tall"><picture><source type="image/webp" srcset="assets/img/black-scream-m.webp 900w, assets/img/black-scream.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/black-scream-m.jpg 900w, assets/img/black-scream.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/black-scream.jpg" alt="ATLiens player in black kit celebrating after a play" loading="lazy" width="800" height="1000"/></picture></figure>
+    <figure class="gal"><picture><source type="image/webp" srcset="assets/img/huddle-27-m.webp 900w, assets/img/huddle-27.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/huddle-27-m.jpg 900w, assets/img/huddle-27.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/huddle-27.jpg" alt="ATLiens number 27 in dugout huddle with teammates" loading="lazy" width="800" height="600"/></picture></figure>
+    <figure class="gal"><picture><source type="image/webp" srcset="assets/img/florida-team-m.webp 900w, assets/img/florida-team.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/florida-team-m.jpg 900w, assets/img/florida-team.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/florida-team.jpg" alt="Full ATLiens roster in powder blue kits at the MSBL Fall Classic in Florida" loading="lazy" width="800" height="600"/></picture></figure>
+    <figure class="gal wide"><picture><source type="image/webp" srcset="assets/img/purple-celebrate-m.webp 900w, assets/img/purple-celebrate.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/purple-celebrate-m.jpg 900w, assets/img/purple-celebrate.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/purple-celebrate.jpg" alt="ATLiens player in purple jersey screaming in celebration after scoring" loading="lazy" width="1600" height="800"/></picture></figure>
+    <figure class="gal"><picture><source type="image/webp" srcset="assets/img/pitcher-day-m.webp 900w, assets/img/pitcher-day.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/pitcher-day-m.jpg 900w, assets/img/pitcher-day.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/pitcher-day.jpg" alt="ATLiens pitcher in day game warming up on the mound" loading="lazy" width="800" height="600"/></picture></figure>
+    <figure class="gal"><picture><source type="image/webp" srcset="assets/img/hype-fist-green-m.webp 900w, assets/img/hype-fist-green.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/hype-fist-green-m.jpg 900w, assets/img/hype-fist-green.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/hype-fist-green.jpg" alt="ATLiens player fist-pumping in the neon-green home kit" loading="lazy" width="800" height="600"/></picture></figure>
+    <figure class="gal"><picture><source type="image/webp" srcset="assets/img/two-up-blue-m.webp 900w, assets/img/two-up-blue.webp 1800w" sizes="(max-width: 768px) 100vw, 50vw"/><img srcset="assets/img/two-up-blue-m.jpg 900w, assets/img/two-up-blue.jpg 1800w" sizes="(max-width: 768px) 100vw, 50vw" src="assets/img/two-up-blue.jpg" alt="Two ATLiens players taking a selfie in powder blue kits" loading="lazy" width="800" height="600"/></picture></figure>
   </div>
 </section>
 

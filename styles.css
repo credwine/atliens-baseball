@@ -1111,6 +1111,44 @@ button { font: inherit; border: 0; background: none; color: inherit; cursor: poi
   .foot-inner { padding: 0 22px 30px; }
 }
 
+/* ================================================================
+   MOBILE PERF GUARDRAILS
+   Kill the expensive stuff on small / touch devices.
+   ================================================================ */
+@media (max-width: 900px) {
+  /* Drop GPU-killing effects */
+  .ufo, .stars.s2, .stars.s3, .trophy-rays { display: none !important; }
+  .stars.s1 { opacity: .12; }
+
+  /* Kill backdrop-filter (shader-heavy on mobile GPUs) */
+  .nav, .hero-eyebrow, .hero-ticker, .join-card { -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+  /* Kill scanlines + grain (fullscreen overlays = repaint on every frame) */
+  .fx-grain, .fx-scanlines { display: none; }
+
+  /* Simplify parallax — no hero stack transform, no gallery parallax */
+  .hero-stack { transform: none !important; }
+  .gal img { transform: none !important; }
+
+  /* Pause the conic-gradient trophy rays animation (mobile heat-killer) */
+  .trophy-rays { animation: none !important; }
+
+  /* Holo shimmer only on devices that can hover */
+  .bball-card .holo { display: none; }
+
+  /* Reduce ticker speed to avoid jank */
+  .ticker-track { animation-duration: 56s !important; }
+
+  /* Fix large shadow blur costs */
+  .trophy-photo, .bball-front { box-shadow: 0 8px 20px rgba(0,0,0,.5) !important; }
+}
+
+/* Touch devices (no hover) — card tilt is pointless */
+@media (hover: none) {
+  .bball-card:hover { transform: none; }
+  .bball-card .holo { opacity: 0 !important; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .ufo, .stars, .trophy-rays { display: none; }
