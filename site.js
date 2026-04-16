@@ -174,8 +174,11 @@
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('flipped'); }
     });
 
-    // Tilt + holo tracking (desktop only — lite devices keep the static holo)
-    if (lite) return;
+    // Tilt + holo tracking - skip only on touch, small viewport, or reduced-motion.
+    // deviceMemory is unreliable (many browsers clamp to 4 for privacy), so we
+    // don't disable tilt based on it alone.
+    const tiltDisabled = isTouch || isSmall || reduced;
+    if (tiltDisabled) return;
     const inner = $('.bball-inner', card);
     let raf;
     card.addEventListener('mousemove', e => {
