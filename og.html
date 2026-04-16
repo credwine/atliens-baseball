@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ATLiens OG Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@700;900&family=Audiowide&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: #0b0b0f; }
+  body {
+    position: relative;
+    font-family: 'Anton', Impact, sans-serif;
+    color: #fff;
+  }
+
+  /* bg champ photo + dark gradient overlay */
+  .bg {
+    position: absolute; inset: 0;
+    background-image: url('assets/img/champions-2022.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    filter: saturate(1.2) contrast(1.1) brightness(.55);
+  }
+  .bg::after {
+    content: ''; position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11,11,15,.92) 0%, rgba(11,11,15,.5) 45%, rgba(11,11,15,.85) 100%),
+      linear-gradient(180deg, rgba(11,11,15,.6) 0%, transparent 35%, transparent 60%, rgba(11,11,15,.95) 100%);
+  }
+
+  /* starfield */
+  .stars {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 60px 80px, #fff, transparent),
+      radial-gradient(2px 2px at 300px 120px, #fff, transparent),
+      radial-gradient(1px 1px at 550px 40px, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 820px 90px, #fff, transparent),
+      radial-gradient(2px 2px at 1100px 50px, #fff, transparent),
+      radial-gradient(1px 1px at 150px 400px, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 1050px 480px, #fff, transparent);
+    opacity: .5;
+  }
+
+  /* grid overlay */
+  .grid-fx {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(90deg, rgba(57,255,20,.08) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(57,255,20,.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, #000, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000, transparent 70%);
+  }
+
+  /* beam */
+  .beam {
+    position: absolute; inset: -10% 40%;
+    background: radial-gradient(ellipse at center, rgba(57,255,20,.22), transparent 60%);
+    pointer-events: none;
+  }
+
+  /* UFO in corner */
+  .ufo {
+    position: absolute;
+    top: 50px; right: 40px;
+    width: 180px;
+    filter: drop-shadow(0 0 20px rgba(57,255,20,.6));
+    transform: rotate(-6deg);
+  }
+  .ufo svg { width: 100%; height: auto; }
+
+  /* Alien badge bottom left */
+  .alien-stamp {
+    position: absolute;
+    bottom: 42px; left: 60px;
+    width: 120px; height: 130px;
+    filter: drop-shadow(0 0 18px rgba(57,255,20,.55));
+  }
+  .alien-stamp img { width: 100%; height: 100%; object-fit: contain; }
+
+  /* content */
+  .content {
+    position: relative;
+    padding: 60px;
+    height: 100%;
+    display: flex; flex-direction: column;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center; gap: 10px;
+    align-self: flex-start;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    letter-spacing: .3em;
+    font-size: 16px;
+    padding: 8px 18px;
+    border: 2px solid #39FF14;
+    background: rgba(57,255,20,.08);
+    color: #39FF14;
+    text-transform: uppercase;
+  }
+  .eyebrow .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #39FF14;
+    box-shadow: 0 0 12px #39FF14;
+  }
+
+  .title {
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 260px;
+    line-height: .85;
+    letter-spacing: -.02em;
+    margin-top: 36px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+  }
+  .title .at { color: #fff; text-shadow: 0 0 40px rgba(255,255,255,.4); }
+  .title .liens {
+    background: linear-gradient(180deg, #39FF14 0%, #39FF14 55%, #7B2CBF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-left: -6px;
+  }
+
+  .sub {
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 38px;
+    line-height: 1;
+    letter-spacing: .01em;
+    margin-top: 22px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .sub .accent {
+    background: linear-gradient(90deg, #39FF14, #a663e4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* bottom bar */
+  .footer {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 20px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    letter-spacing: .3em;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #b8bacc;
+    background: rgba(0,0,0,.55);
+    border-top: 2px solid rgba(57,255,20,.4);
+  }
+  .footer .left { display: flex; align-items: center; gap: 14px; padding-left: 150px; }
+  .footer .right { color: #39FF14; }
+  .footer .divider { width: 8px; height: 8px; background: #39FF14; border-radius: 50%; }
+
+  /* trophy badge */
+  .trophy-badge {
+    position: absolute;
+    right: 60px; bottom: 110px;
+    width: 360px;
+    padding: 20px 24px;
+    border: 2px solid #39FF14;
+    background: linear-gradient(135deg, rgba(57,255,20,.12), rgba(123,44,191,.18));
+    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+    transform: rotate(-2deg);
+  }
+  .trophy-badge .label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    letter-spacing: .3em;
+    font-size: 14px;
+    color: #39FF14;
+    margin-bottom: 4px;
+  }
+  .trophy-badge .year {
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -.01em;
+  }
+  .trophy-badge .what {
+    font-family: 'Anton', Impact, sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    margin-top: 4px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="stars"></div>
+  <div class="grid-fx"></div>
+  <div class="beam"></div>
+
+  <!-- UFO -->
+  <div class="ufo">
+    <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="100" cy="50" rx="80" ry="12" fill="#0b0b0f" stroke="#39FF14" stroke-width="2.5"/>
+      <ellipse cx="100" cy="44" rx="40" ry="20" fill="#1a0d2e" stroke="#7B2CBF" stroke-width="2.5"/>
+      <circle cx="100" cy="42" r="8" fill="#39FF14" opacity=".9"/>
+      <circle cx="70" cy="54" r="3" fill="#39FF14"/>
+      <circle cx="100" cy="58" r="3" fill="#39FF14"/>
+      <circle cx="130" cy="54" r="3" fill="#39FF14"/>
+    </svg>
+  </div>
+
+  <div class="content">
+    <div class="eyebrow"><span class="dot"></span> ATLANTA MABL / MSBL <span class="dot"></span></div>
+    <h1 class="title">
+      <span class="at">AT</span><span class="liens">Liens</span>
+    </h1>
+    <p class="sub">Out of this world. <span class="accent">Out of the park.</span></p>
+  </div>
+
+  <!-- trophy badge -->
+  <div class="trophy-badge">
+    <div class="label">Fall League</div>
+    <div class="year">2022</div>
+    <div class="what">Champions</div>
+  </div>
+
+  <!-- alien stamp -->
+  <div class="alien-stamp">
+    <img src="assets/alien-logo.svg" alt=""/>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="left">The A Forever <span class="divider"></span> Est. ATL</div>
+    <div class="right">atliens.baseball</div>
+  </div>
+</body>
+</html>
